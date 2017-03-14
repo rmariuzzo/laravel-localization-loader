@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 
-test('should load PHP array translation file', () => {
+test('should load PHP Laravel translation file', () => {
   return runWebpack({
     entry: path.join(__dirname, './fixtures/resources/lang/en/messages.php'),
   })
@@ -10,10 +10,11 @@ test('should load PHP array translation file', () => {
     expect(result).toBeDefined()
     expect(result).toHaveProperty('string', 'Rubens')
     expect(result).toHaveProperty('number', 123)
+    expect(result).toHaveProperty('parent.child', 'Mariuzzo')
   })
 })
 
-function runWebpack(config) {
+function runWebpack(config, legacy) {
   return new Promise((resolve, reject) => {
     const webpackConfig = merge({
       output: {
@@ -26,6 +27,7 @@ function runWebpack(config) {
           {
             test: /resources\/lang.+\.php$/,
             loader: 'laravel-localization-loader',
+            options: { legacy },
           }
         ]
       },

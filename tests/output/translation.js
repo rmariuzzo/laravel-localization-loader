@@ -80,7 +80,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ (function(module, exports) {
 
-module.exports = {"string":"Rubens","number":123};
+module.exports = {"string":"Rubens","number":123,"parent":{"child":"Mariuzzo"}};
 
 /***/ })
 /******/ ]);
