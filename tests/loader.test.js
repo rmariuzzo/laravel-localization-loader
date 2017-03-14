@@ -14,7 +14,7 @@ test('should load PHP Laravel translation file', () => {
   })
 })
 
-function runWebpack(config, legacy) {
+function runWebpack(config) {
   return new Promise((resolve, reject) => {
     const webpackConfig = merge({
       output: {
@@ -27,7 +27,6 @@ function runWebpack(config, legacy) {
           {
             test: /resources\/lang.+\.php$/,
             loader: 'laravel-localization-loader',
-            options: { legacy },
           }
         ]
       },
