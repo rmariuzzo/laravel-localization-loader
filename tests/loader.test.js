@@ -1,6 +1,6 @@
 const path = require('path')
-const webpack = require('webpack')
 const merge = require('webpack-merge')
+const webpack = require('webpack')
 
 test('should load PHP Laravel translation file', () => {
   return runWebpack({
@@ -32,7 +32,7 @@ function runWebpack(config) {
       },
       resolveLoader: {
         alias: {
-          'laravel-localization-loader': path.resolve(__dirname, '../loader/index.js'),
+          'laravel-localization-loader': path.resolve(__dirname, '../index.js'),
         }
       }
     }, config)

@@ -1,6 +1,5 @@
-
-const phpArrayParser = require('./parser/php-array')
-const jsonParser = require('json-loader')
+const phpArrayLoader = require('php-array-loader')
+const jsonLoader = require('json-loader')
 
 /**
  * The Laravel Localization loader.
@@ -9,15 +8,12 @@ const jsonParser = require('json-loader')
  */
 const laravelLocalizationLoader = function(source) {
   const isPHP = ~source.indexOf('<?php')
-  let parsed;
 
   if (isPHP) {
-    parsed = phpArrayParser(source)
+    return phpArrayLoader(source)
   } else {
-    parsed = jsonParser(source)
+    return jsonLoader(source)
   }
-
-  return parsed
 }
 
 module.exports = laravelLocalizationLoader
