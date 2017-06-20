@@ -1,6 +1,6 @@
-const path = require('path')
-const merge = require('webpack-merge')
-const webpack = require('webpack')
+var path = require('path')
+var merge = require('webpack-merge')
+var webpack = require('webpack')
 
 test('should load PHP Laravel translation file', () => {
   return runWebpack({
@@ -16,7 +16,7 @@ test('should load PHP Laravel translation file', () => {
 
 function runWebpack(config) {
   return new Promise((resolve, reject) => {
-    const webpackConfig = merge({
+    var webpackConfig = merge({
       output: {
         path: path.join(__dirname, 'output'),
         filename: 'translation.js',
@@ -38,7 +38,7 @@ function runWebpack(config) {
     }, config)
 
     webpack(webpackConfig, (webpackError, stats) => {
-      const error = webpackError ||
+      var error = webpackError ||
         (stats.hasErrors() && stats.compilation.errors[0]) ||
         (stats.hasWarnings() && stats.compilation.warnings[0])
       if (error) {

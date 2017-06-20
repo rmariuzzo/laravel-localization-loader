@@ -1,2 +1,2 @@
-const message = require('./resources/lang/en/messages.php')
+var message = require('./resources/lang/en/messages.php')
 console.log(message);
