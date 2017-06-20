@@ -1,5 +1,5 @@
-<h1 align="center">Laravel Localization loader</h1>
-<h6 align="center">Laravel Localization loader for webpack. Convert Laravel Translation strings to JavaScript Objects.</h6>
+<h1 align="center">Laravel localization Loader</h1>
+<h6 align="center">Laravel localization Loader for webpack. Convert Laravel Translation strings to JavaScript Objects.</h6>
 
 ## Installation
 
