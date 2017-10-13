@@ -25,7 +25,7 @@ function runWebpack(config) {
       module: {
         rules: [
           {
-            test: /resources\/lang.+\.php$/,
+            test: /resources\/lang.+\.(php|json)$/,
             loader: 'laravel-localization-loader',
           }
         ]
