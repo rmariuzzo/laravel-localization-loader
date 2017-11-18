@@ -1,6 +1,6 @@
 {
   "name": "laravel-localization-loader",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Laravel Localization loader for webpack. Convert Laravel Translation strings to JavaScript Objects.",
   "keywords": [
     "laravel",
