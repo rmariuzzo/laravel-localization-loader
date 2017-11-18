@@ -6,6 +6,8 @@ Laravel localization Loader for Webpack.
 
 Convert Laravel Translation files (php or json) to JavaScript Objects.
 
+</div>
+
 ## Features
 
  - Support both Laravel PHP and JSON translation files.
