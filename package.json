@@ -2,16 +2,26 @@
   "name": "laravel-localization-loader",
   "version": "1.0.3",
   "description": "Laravel Localization loader for webpack. Convert Laravel Translation strings to JavaScript Objects.",
-  "main": "loader/index.js",
+  "keywords": [
+    "laravel",
+    "localization",
+    "loader",
+    "webpack",
+    "webpack-loader",
+    "laravel-localization"
+  ],
+  "main": "index.js",
+  "homepage": "https://github.com/rmariuzzo/Laravel-localization-loader",
   "repository": "git@github.com:rmariuzzo/laravel-localization-loader.git",
   "author": "Rubens Mariuzzo <rubens@mariuzzo.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest --config tests/jest.config.json"
+    "test": "jest"
   },
   "devDependencies": {
-    "jest": "^19.0.2",
-    "webpack": "^2.2.1",
+    "jest": "^21.2.1",
+    "tmp": "^0.0.33",
+    "webpack": "^3.8.1",
     "webpack-merge": "^4.0.0"
   },
   "dependencies": {

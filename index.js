@@ -1,12 +1,26 @@
+'use strict'
+
+/**
+ * Module dependencies.
+ * @private
+ */
+
 var phpArrayLoader = require('php-array-loader')
 var jsonLoader = require('json-loader')
+
+/**
+ * Module exports.
+ */
+
+module.exports = laravelLocalizationLoader
 
 /**
  * The Laravel Localization loader.
  * @param  {string} source The source contents.
  * @return {string}        The parsed contents.
  */
-var laravelLocalizationLoader = function(source) {
+
+function laravelLocalizationLoader(source) {
   var isPHP = ~source.indexOf('<?php')
 
   if (isPHP) {
@@ -15,5 +29,3 @@ var laravelLocalizationLoader = function(source) {
     return jsonLoader(source)
   }
 }
-
-module.exports = laravelLocalizationLoader
