@@ -1,12 +1,5 @@
-<div align=center>
+![Laravel localization Loader – Laravel localization Loader for Webpack. Convert Laravel Translation files (php or json) to JavaScript Objects.](banner.svg)
 
-# Laravel localization Loader
-
-Laravel localization Loader for Webpack.
-
-Convert Laravel Translation files (php or json) to JavaScript Objects.
-
-</div>
 
 ## Features
 
