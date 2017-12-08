@@ -30,7 +30,7 @@ module.exports = {
     rules: [
       {
         // Matches all PHP or JSON files in `resources/lang` directory.
-        test: /resources\/lang.+\.(php|json)$/,
+        test: /resources(\\|\/)lang.+\.(php|json)$/,
         loader: 'laravel-localization-loader',
       }
     ]
@@ -47,7 +47,7 @@ mix.webpackConfig({
     rules: [
       {
         // Matches all PHP or JSON files in `resources/lang` directory.
-        test: /resources\/lang.+\.(php|json)$/,
+        test: /resources(\\|\/)lang.+\.(php|json)$/,
         loader: 'laravel-localization-loader',
       }
     ]
