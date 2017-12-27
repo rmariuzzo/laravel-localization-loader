@@ -6,4 +6,5 @@ return [
   'parent' => [
     'child' => 'Mariuzzo',
   ],
+  'escape' => '\'escaped\''
 ];

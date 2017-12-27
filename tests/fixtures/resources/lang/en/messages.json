@@ -3,5 +3,6 @@
   "number": 123,
   "parent": {
     "child": "Mariuzzo"
-  }
+  },
+  "escape": "\"escaped\""
 }

@@ -34,6 +34,7 @@ describe('laravel-localization-loader', () => {
       expect(result).toHaveProperty('string', 'Rubens')
       expect(result).toHaveProperty('number', 123)
       expect(result).toHaveProperty('parent.child', 'Mariuzzo')
+      expect(result).toHaveProperty('escape', '\'escaped\'')
     })
   })
   it('should load JSON Laravel translation file', () => {
@@ -45,6 +46,7 @@ describe('laravel-localization-loader', () => {
       expect(result).toHaveProperty('string', 'Rubens')
       expect(result).toHaveProperty('number', 123)
       expect(result).toHaveProperty('parent.child', 'Mariuzzo')
+      expect(result).toHaveProperty('escape', '\"escaped\"')
     })
   })
 })
