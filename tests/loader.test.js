@@ -29,7 +29,8 @@ describe('laravel-localization-loader', () => {
     return runWebpack(testDir.name, {
       entry: path.join(__dirname, './fixtures/resources/lang/en/messages.php'),
     })
-    .then((result) => {
+    .then((output) => {
+      const result = require(output)
       expect(result).toBeDefined()
       expect(result).toHaveProperty('string', 'Rubens')
       expect(result).toHaveProperty('number', 123)
@@ -37,11 +38,13 @@ describe('laravel-localization-loader', () => {
       expect(result).toHaveProperty('escape', '\'escaped\'')
     })
   })
+
   it('should load JSON Laravel translation file', () => {
     return runWebpack(testDir.name, {
       entry: path.join(__dirname, './fixtures/resources/lang/en/messages.json'),
     })
-    .then((result) => {
+    .then((output) => {
+      const result = require(output)
       expect(result).toBeDefined()
       expect(result).toHaveProperty('string', 'Rubens')
       expect(result).toHaveProperty('number', 123)
@@ -74,7 +77,7 @@ function runWebpack(outputDir, config) {
       module: {
         rules: [
           {
-            test: /resources\/lang.+\.(php|json)$/,
+            test: /resources[\\\/]lang.+\.(php|json)$/,
             loader: 'laravel-localization-loader',
           }
         ]
@@ -98,11 +101,13 @@ function runWebpack(outputDir, config) {
         return reject(error)
       }
 
-      // Remove webpack output from Node require's cache.
-      delete require.cache[`${outputDir}/translation.js`]
+      const output = `${outputDir}/translation.js`
 
-      // Resolve with the recente webpack's output.
-      return resolve(require(`${outputDir}/translation.js`))
+      // Remove webpack output from Node require's cache.
+      delete require.cache[output]
+
+      // Resolve with the recent webpack's output.
+      return resolve(output)
     })
   })
 }
