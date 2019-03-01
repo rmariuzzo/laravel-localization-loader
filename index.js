@@ -6,7 +6,6 @@
  */
 
 var phpArrayLoader = require('php-array-loader')
-var jsonLoader = require('json-loader')
 
 /**
  * Module exports.
@@ -21,11 +20,5 @@ module.exports = laravelLocalizationLoader
  */
 
 function laravelLocalizationLoader(source) {
-  var isPHP = ~source.indexOf('<?php')
-
-  if (isPHP) {
     return phpArrayLoader(source)
-  } else {
-    return jsonLoader(source)
-  }
 }
