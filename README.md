@@ -5,7 +5,7 @@
 
  - Support both Laravel PHP and JSON translation files.
  - 100% test coverage.
- - Only has two dependencies: [json-loader](https://github.com/webpack-contrib/json-loader) and [php-array-loader](https://github.com/rmariuzzo/php-array-loader).
+ - Only has one dependencies: [php-array-loader](https://github.com/rmariuzzo/php-array-loader).
 
 ## Installation
 
@@ -47,7 +47,7 @@ mix.webpackConfig({
     rules: [
       {
         // Matches all PHP or JSON files in `resources/lang` directory.
-        test: /resources[\\\/]lang.+\.(php|json)$/,
+        test: /resources[\\\/]lang.+\.(php)$/,
         loader: 'laravel-localization-loader',
       }
     ]
@@ -66,9 +66,9 @@ First, you will need to install [Lang.js](https://github.com/rmariuzzo/Lang.js) 
 export default {
   // The key format should be: 'locale.filename'.
   'en.messages': require('../../resources/lang/en/messages.php'),
-  'es.messages': require('../../resources/lang/es/messages.php'),
+  'es': require('../../resources/lang/es.json'),
   'en.auth': require('../../resources/lang/en/auth.php'),
-  'es.auth': require('../../resources/lang/es/auth.php'),
+  'en': require('../../resources/lang/en.json'),
 }
 ```
 
