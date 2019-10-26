@@ -85,6 +85,16 @@ lang.get('messages.hello')
 
 Profit!
 
+### subfolder :
+you can use this messages in subfolders !
+in `message.js`
+ `'{locale}.{subfolder}.{file}': require('../../../../lang/{locale}/{subfolder}/{file}.php')`
+
+and in your code :
+`lang.get('{subfolder}/{file}.foo.bar'),`
+same for more sub folders :
+`lang.get('{subfolder1}/{subfolder2}/{subfolder3}/.../{file}.foo.bar'),`
+
 ## Development
 
   1. Clone and fork this repo.
